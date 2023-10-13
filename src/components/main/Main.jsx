@@ -8,17 +8,19 @@ import './main.less';
 export const Main = () => {
     const dispatch = useDispatch();
     const repos = useSelector(state => state.repos.items);
-    console.log('main', repos)
 
     useEffect(() => {
         dispatch(getRepos())
-    }, [repos])
+    }, [])
 
     return (
         <div>
             {
-                repos.map(repo =>
-                    <Repo props={repo} />
+                repos.map((repo, i) =>
+                    <Repo
+                        key={i}
+                        repo={repo}
+                    />
                 )
             }
         </div>

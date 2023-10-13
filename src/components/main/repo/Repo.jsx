@@ -8,8 +8,6 @@ export const Repo = (props) => {
         return null;
     }
 
-    console.log('repo', repo)
-
     return (
         <div className="repo">
             <div className="repo-header">
@@ -17,7 +15,7 @@ export const Repo = (props) => {
                 <div className="repo-header-stars">{repo.stargazers_count}</div>
             </div>
             <div className="repo-last-commit">{repo.updated_at}</div>
-            <a href={repo.html_url} className="repo-link">Ссылка на репозитори: {repo.html_url }</a>
+            <a href={repo.html_url} className="repo-link">Ссылка на репозиторий: {repo.html_url }</a>
         </div>
     );
 }
