@@ -18,6 +18,9 @@ module.exports = {
         new HtmlWebpackPlugin({ template: './src/index.html' }),
         new CleanWebpackPlugin(),
     ],
+    resolve: {
+        extensions: ['.js', '.jsx'],
+    },
     module: {
         rules: [
             {
@@ -35,12 +38,6 @@ module.exports = {
                 options: {
                     presets: ['@babel/preset-env'],
                 }
-                // loader: {
-                //     loader: 'babel-loader',
-                //     options: {
-                //         presets: ['@babel/preset-env'],
-                //     }
-                // }
             },
             {
                 test: /\.jsx$/,
@@ -49,13 +46,6 @@ module.exports = {
                 options: {
                     presets: ['@babel/preset-env', '@babel/preset-react'],
                 }
-
-                // loader: {
-                //     loader: 'babel-loader',
-                    // options: {
-                    //     presets: ['@babel/preset-env', '@babel/preset-react '],
-                    // }
-                // }
             },
         ]
     }
